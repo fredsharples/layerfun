@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B643275E1758136900EB0DE3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B643275C17580D1400EB0DE3 /* QuartzCore.framework */; };
+		B64327601758203800EB0DE3 /* tiger_door.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B643275F1758203800EB0DE3 /* tiger_door.jpg */; };
 		B6BE082A1756B8DB0008BD20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BE08291756B8DB0008BD20 /* UIKit.framework */; };
 		B6BE082C1756B8DB0008BD20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BE082B1756B8DB0008BD20 /* Foundation.framework */; };
 		B6BE082E1756B8DB0008BD20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BE082D1756B8DB0008BD20 /* CoreGraphics.framework */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B643275C17580D1400EB0DE3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B643275F1758203800EB0DE3 /* tiger_door.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiger_door.jpg; sourceTree = "<group>"; };
 		B6BE08261756B8DB0008BD20 /* layerfun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = layerfun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BE08291756B8DB0008BD20 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B6BE082B1756B8DB0008BD20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B643275E1758136900EB0DE3 /* QuartzCore.framework in Frameworks */,
 				B6BE082A1756B8DB0008BD20 /* UIKit.framework in Frameworks */,
 				B6BE082C1756B8DB0008BD20 /* Foundation.framework in Frameworks */,
 				B6BE082E1756B8DB0008BD20 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +78,7 @@
 		B6BE08281756B8DB0008BD20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B643275C17580D1400EB0DE3 /* QuartzCore.framework */,
 				B6BE08291756B8DB0008BD20 /* UIKit.framework */,
 				B6BE082B1756B8DB0008BD20 /* Foundation.framework */,
 				B6BE082D1756B8DB0008BD20 /* CoreGraphics.framework */,
@@ -96,6 +102,7 @@
 		B6BE08301756B8DB0008BD20 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B643275F1758203800EB0DE3 /* tiger_door.jpg */,
 				B6BE08311756B8DB0008BD20 /* layerfun-Info.plist */,
 				B6BE08321756B8DB0008BD20 /* InfoPlist.strings */,
 				B6BE08351756B8DB0008BD20 /* main.m */,
@@ -163,6 +170,7 @@
 				B6BE083E1756B8DB0008BD20 /* Default@2x.png in Resources */,
 				B6BE08401756B8DB0008BD20 /* Default-568h@2x.png in Resources */,
 				B6BE08461756B8DB0008BD20 /* ViewController.xib in Resources */,
+				B64327601758203800EB0DE3 /* tiger_door.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +306,7 @@
 				B6BE084B1756B8DB0008BD20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
