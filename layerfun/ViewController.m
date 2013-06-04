@@ -79,6 +79,7 @@ static inline double radians (double degrees)
     [customDrawn setNeedsDisplay];
     
     [self FadeMyLayer:imageLayer];
+    [self MoveMyLayerWithBlocks:imageLayer];
     
    /* CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"opacity"];
     fadeAnim.fromValue = [NSNumber numberWithFloat:1.0];
@@ -88,7 +89,64 @@ static inline double radians (double degrees)
     
     imageLayer.opacity = 0.0;
     */
+}
+ 
+- (void) MoveMyLayerWithBlocks:(CALayer *)myLayer {
     
+    //int multiplier = 7;
+    //int (^myBlock)(int) = ^(int num) {return num * multiplier;};
+    //printf("%d", myBlock(3));
+    
+    void (^setVars)(CGPoint,int,CGFloat) = ^(CGPoint fromPoint, int animationDistance, CGFloat animationDuration){
+        NSValue *fromPointValue = [NSValue valueWithCGPoint:fromPoint];
+        CABasicAnimation* moveAnim = [CABasicAnimation animationWithKeyPath:@"position"];
+        moveAnim.fromValue = fromPointValue;
+        CGPoint toPoint = CGPointMake(myLayer.position.x,animationDistance);
+        moveAnim.toValue = [NSValue valueWithCGPoint:toPoint];
+        moveAnim.duration = animationDuration;
+        [myLayer addAnimation:moveAnim forKey:@"position"];
+        
+        myLayer.position = fromPoint;
+
+    };
+    
+    setVars(myLayer.position,-100,4.0);
+    
+    //declare variables
+    //CGPoint fromPoint = myLayer.position;
+   // NSValue *fromPointValue = [NSValue valueWithCGPoint:fromPoint];
+    //int animationDistance = -100;
+    //CGFloat animationDuration = 4.0;
+    /*
+    CABasicAnimation* moveAnim = [CABasicAnimation animationWithKeyPath:@"position"];
+    moveAnim.fromValue = fromPointValue;
+    CGPoint toPoint = CGPointMake(myLayer.position.x,animationDistance);
+    moveAnim.toValue = [NSValue valueWithCGPoint:toPoint];
+    moveAnim.duration = animationDuration;
+    [myLayer addAnimation:moveAnim forKey:@"position"];
+    
+    myLayer.position = fromPoint;
+     */
+    
+}
+
+    //printf("%d", myBlock(3));
+
+- (void) MoveMyLayer:(CALayer *)myLayer {
+    CGPoint startPos = myLayer.position;
+    
+    NSValue *initialPosition = [NSValue valueWithCGPoint:myLayer.position];
+    
+    CABasicAnimation* moveAnim = [CABasicAnimation animationWithKeyPath:@"position"];
+    moveAnim.fromValue = initialPosition;
+    
+    CGPoint toPoint = CGPointMake(myLayer.position.x,-100);
+    
+    moveAnim.toValue = [NSValue valueWithCGPoint:toPoint];
+    moveAnim.duration = 4.0;
+    [myLayer addAnimation:moveAnim forKey:@"position"];
+    
+    myLayer.position = startPos;
 }
 
 - (void) FadeMyLayer:(CALayer *)myLayer {
@@ -99,7 +157,6 @@ static inline double radians (double degrees)
     [myLayer addAnimation:fadeAnim forKey:@"opacity"];
     
     myLayer.opacity = 0.0;
-
     
 }
 void MyDrawColoredPattern (void *info, CGContextRef context) {
